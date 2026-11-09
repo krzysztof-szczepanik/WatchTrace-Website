@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WatchTrace is a Windows desktop application for tracking movies and TV series, with local data storage and no account required.">
+    <meta name="theme-color" content="#101114">
+
+    <title>WatchTrace — Your movies. Your series. Your story.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="#home" aria-label="WatchTrace home">
+                <img src="assets/icons/clapperboard.svg" alt="" class="brand-icon">
+                <span class="brand-name">Watch<span class="brand-accent">Trace</span></span>
+            </a>
+
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="#home" class="nav-link active" aria-current="location">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section id="home" class="hero section">
+            <div class="container hero-content">
+                <h1>Your movies. Your series. <span>Your story.</span></h1>
+
+                <p class="hero-description">
+                    Organize your collections, manage your watchlist, and keep track of everything you've watched — all in one place.
+                </p>
+
+                <a class="primary-button" href="#features">
+                    Explore Features
+                    <img src="assets/icons/arrow-right.svg" alt="" class="button-icon">
+                </a>
+
+                <div class="development-card">
+                    <div class="development-icon">
+                        <img src="assets/icons/construction.svg" alt="" class="development-icon-image">
+                    </div>
+
+                    <div class="development-text">
+                        <h2>Under Development</h2>
+                        <p>WatchTrace for Windows is in progress.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="features section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">FEATURES</span>
+                    <h2>Everything in one place.</h2>
+                </div>
+
+                <div class="features-grid">
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icons/layout-grid.svg" alt="">
+                        </div>
+                        <h3>Custom Collections</h3>
+                        <p>Organize movies and TV series into your own personalized collections.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icons/bookmark.svg" alt="">
+                        </div>
+                        <h3>Watchlist</h3>
+                        <p>Keep track of movies and TV series you want to watch next.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icons/rotate-ccw-clock.svg" alt="">
+                        </div>
+                        <h3>Watch History</h3>
+                        <p>Record what you've watched and keep a detailed history of movies and TV series.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icons/hard-drive.svg" alt="">
+                        </div>
+                        <h3>Local &amp; Offline</h3>
+                        <p>Your personal data stays on your device. Access saved information without an internet connection.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icons/arrow-left-right.svg" alt="">
+                        </div>
+                        <h3>Import &amp; Export</h3>
+                        <p>Back up your personal data and restore it whenever you need.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <img src="assets/icons/search.svg" alt="">
+                        </div>
+                        <h3>Movie &amp; TV Search</h3>
+                        <p>Discover movies and TV series using TMDb. An internet connection is required for search.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="about section">
+            <div class="container about-content">
+                <span class="eyebrow">ABOUT</span>
+                <h2>What is WatchTrace?</h2>
+
+                <p>WatchTrace is a desktop application for Windows that helps you keep track of movies and TV series. It provides a personal space to manage what you've watched and what you plan to watch.</p>
+
+                <p>The project was created as an alternative to services that require an account to track movies and TV series. WatchTrace keeps personal data stored locally on the user's computer, without requiring registration or login.</p>
+
+                <div class="thesis-note">
+                    <img src="assets/icons/graduation-cap.svg" alt="" class="thesis-icon">
+                    <span>Developed as an engineering thesis project.</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <a class="tmdb-logo-link" href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit The Movie Database">
+                    <img src="assets/tmdb-logo.svg" alt="TMDb - The Movie Database" class="tmdb-logo">
+                </a>
+
+                <div class="footer-attribution">
+                    <p class="footer-heading">Movie &amp; Series data provided by TMDb</p>
+                    <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>WatchTrace © 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll("main section[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const header = document.querySelector(".site-header");
+
+        function updateActiveNavigation() {
+            const position = window.scrollY + header.offsetHeight + 100;
+            let currentSection = "home";
+
+            sections.forEach(section => {
+                if (position >= section.offsetTop) {
+                    currentSection = section.id;
+                }
+            });
+
+            if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+                currentSection = "about";
+            }
+
+            navLinks.forEach(link => {
+                const isActive = link.getAttribute("href") === "#" + currentSection;
+                link.classList.toggle("active", isActive);
+
+                if (isActive) {
+                    link.setAttribute("aria-current", "location");
+                } else {
+                    link.removeAttribute("aria-current");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", updateActiveNavigation, { passive: true });
+        window.addEventListener("resize", updateActiveNavigation);
+        window.addEventListener("load", updateActiveNavigation);
+    </script>
+
+</body>
+</html>
